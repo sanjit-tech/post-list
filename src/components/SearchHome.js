@@ -22,21 +22,14 @@ class SearchHome extends Component{
     }
 
     handleChange = (e) => {
-        const {p_id} = this.state
+        const {postList} = this.state
         const { value } = e.target
-        if (e.key === 'Enter') {
-            let url = `/search-result`
-            this.props.history.push({
-                pathname: `${url}/`,
-                state: { post_id: p_id }
-            })
-        }
-        if (value.length > 3) {
-            this.setState({search_text: value}, ()=>{
-                this.getSearchData({ search: value })
-            })
+        console.log('value', value)
+        const filterItem = postList.filter((currentElm)=> {
+            return currentElm.title === value
+        })
 
-        }
+        this.setState({postList: filterItem})
     };
     getPostDataResult =()=> {
         const {post_id} = this.state
@@ -87,9 +80,8 @@ class SearchHome extends Component{
                 </div>
                 }
                 {/*<div className="row">*/}
-                    {/*<div className="col-xl-6">*/}
-                        {/*<div className="shadow p-3 mb-5 bg-body rounded">*/}
-                            {/*<h2 className="text-center">Search Your Keyword</h2>*/}
+                    {/*<div className="col-xl-6 m-auto">*/}
+                        {/*<div className="mb-5">*/}
                             {/*<div className="input-group mb-3 mt-4">*/}
                                 {/*<input type="text" className="form-control" placeholder="Type keyword here..."*/}
                                        {/*aria-label="Recipient's username" aria-describedby="basic-addon2"*/}
@@ -124,7 +116,7 @@ class SearchHome extends Component{
                                      }}
                                 >
                                     <div className="card-body">
-                                        <h5 className="card-title text-capitalize">#{id}{title}</h5>
+                                        <h5 className="card-title text-capitalize text-info">#{id}{title}</h5>
                                         <p className="card-text">{body}</p>
                                         <a href="#" className="card-link">See Post</a>
                                     </div>
