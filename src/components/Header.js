@@ -4,7 +4,7 @@ export function Header() {
     return(
         <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
             <div className="container-fluid p-2 px-5">
-                <a className="navbar-brand" href="/">Search App</a>
+                <a className="navbar-brand" href="/">Post App</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapsibleNavbar">
                     <span className="navbar-toggler-icon"></span>

@@ -20,32 +20,32 @@ class SearchResult extends Component{
     }
     componentDidMount() {
         const {post_id} = this.state
-        if(post_id){
-            this.getSearchDataResult()
-        }
+        // if(post_id){
+        //     this.getSearchDataResult()
+        // }
+        this.getSearchDataResult()
     }
 
     getSearchDataResult =()=> {
         const {post_id} = this.state
         this.setState({ loading: true })
-        let url = `${`http://hn.algolia.com/api/v1/items/${post_id}`}`
+        let url = `${`https://jsonplaceholder.typicode.com/posts/${post_id}`}`
         axios.get(url)
             .then((response)=>{
                 const {data} = response
-                const {children} = data
-                this.setState({searched_data: data, post_comment: children, loading: false })
+                debugger
+                this.setState({searched_data: data, loading: false })
             })
             .catch(errors => console.log('Not found'))
     }
 
     render(){
-        const {searched_data, post_comment, loading} = this.state
-        const {title, points, type} = searched_data || {}
-        console.log('post_comment', post_comment)
+        const {searched_data, loading} = this.state
+        const {id, userId, body, title} = searched_data || {}
         return(
             <div className="container p-5">
                 <div className="row">
-                    <div className="col-xl-12">
+                    <div className="col-xl-10 m-auto">
                         {loading &&
                         <div className="d-flex justify-content-center form-box">
                             <div className="spinner-grow text-danger" role="status" style={{width:'60px', height:'60px'}}>
@@ -53,36 +53,13 @@ class SearchResult extends Component{
                             </div>
                         </div>
                         }
-
-                        {post_comment.length > 0 ?
-                            <Fragment>
-                                <h2 className="text-center mb-5">Search Result</h2>
-                                <div className="shadow p-3 mb-5 bg-body rounded">
-                                    <h3 className="mb-3">{title} <span className="badge bg-success" style={{fontSize:'16px'}}>{points}</span></h3>
-                                    <ul className="list-group">
-                                {post_comment.map((postData, i)=>{
-                                    const {text, points, type, author} = postData
-                                    return(
-
-                                            <li className="list-group-item" key={i} style={{borderBottom:'1px solid #eee'}}>
-                                                {points !== null && <span className="badge bg-primary">Point:-{points}</span>}
-                                                {text !== null &&
-                                                <HTMLRenderer
-                                                    html={text}
-                                                    // html={JSON.stringify(text).replace(/[^\w\s]/gi, '')}
-                                                />
-                                                }
-
-                                                {author && <p className="text-info"><span style={{color:'gray'}}>Author:-</span> {author}</p>}
-                                            </li>
-                                    )
-                                })}
-                                    </ul>
-                                </div>
-                            </Fragment>
-                            :
-                           !loading && <h5 className="text-center mp-5">No Comment</h5>
-                        }
+                        <h1 className="text-center mb-4">Post Result</h1>
+                        <div className="card shadow mb-4">
+                            <div className="card-body">
+                                <h5 className="card-title text-capitalize">{title}</h5>
+                                <p className="card-text">{body}</p>
+                            </div>
+                        </div>
 
                     </div>
                 </div>

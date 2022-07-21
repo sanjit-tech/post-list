@@ -100,12 +100,19 @@ class SearchHome extends Component{
                 {/*</div>*/}
                 <div className="row">
                     <div className="col-xl-10 m-auto">
-                        {postList.map((singalPost, i)=>{
+                        {postList.slice(0, 10).map((singalPost, i)=>{
                             const {id, userId, body, title} = singalPost
                             return(
-                                <div className="card shadow mb-3" key={id} style={{cursor:'pointer'}}>
+                                <div className="card shadow mb-4" key={id} style={{cursor:'pointer'}}
+                                     onClick={() => {
+                                         this.props.history.push({
+                                             pathname: `${`/post-result`}/${id}`,
+                                             state: {post_id: id}
+                                         })
+                                     }}
+                                >
                                     <div className="card-body">
-                                        <h5 className="card-title">{title.charAt(0).toUpperCase() + title.slice(1)}</h5>
+                                        <h5 className="card-title text-capitalize">#{id}{title}</h5>
                                         <p className="card-text">{body}</p>
                                         <a href="#" className="card-link">See Post</a>
                                     </div>
@@ -113,6 +120,10 @@ class SearchHome extends Component{
 
                             )
                         })}
+                        <div className="d-flex justify-content-between mt-5">
+                            <button className="btn btn-primary">Previous</button>
+                           <button className="btn btn-primary">Next</button>
+                        </div>
                     </div>
                 </div>
             </div>
