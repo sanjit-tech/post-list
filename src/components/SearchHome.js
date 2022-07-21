@@ -131,7 +131,7 @@ class SearchHome extends Component{
 
                             )
                         })}
-                        <div className="d-flex justify-content-between mt-5">
+                        <div className="d-flex justify-content-center mt-5">
                             <nav>
                                 <ul className="pagination m-auto">
                                     {pageNumber.map((page, i)=>{
