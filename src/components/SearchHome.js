@@ -111,6 +111,7 @@ class SearchHome extends Component{
                 {/*</div>*/}
                 <div className="row">
                     <div className="col-xl-10 m-auto">
+                        <h1 className="text-center mb-4">Post List</h1>
                         {currentPost.map((singalPost, i)=>{
                             const {id, userId, body, title} = singalPost
                             return(
