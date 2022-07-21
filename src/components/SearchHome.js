@@ -11,7 +11,9 @@ class SearchHome extends Component{
             search_text: '',
             p_id: '',
             dataList: [],
-            postList: []
+            postList: [],
+            current_page: 1,
+            post_per_page: 10,
         }
 
     }
@@ -62,10 +64,19 @@ class SearchHome extends Component{
             })
             .catch(errors => console.log('Not found'))
     }
-
+     pageChange =(page)=>{
+            this.setState({current_page: page})
+     }
     render(){
-        const {postList, p_id, loading} = this.state
-        console.log('search_text', p_id)
+        const {postList, p_id, counter, loading, current_page, post_per_page} = this.state
+        const indexOfLastPost = current_page * post_per_page
+        const indexOfFirstPost = indexOfLastPost - post_per_page
+        const currentPost = postList.slice(indexOfFirstPost, indexOfLastPost)
+        let pageNumber = []
+        for(let i = 1; i <= Math.ceil(postList.length / post_per_page); i++){
+            pageNumber.push(i)
+        }
+        console.log('pageNumber', pageNumber)
         return(
             <div className="container p-5">
                 {loading &&
@@ -100,7 +111,7 @@ class SearchHome extends Component{
                 {/*</div>*/}
                 <div className="row">
                     <div className="col-xl-10 m-auto">
-                        {postList.slice(0, 10).map((singalPost, i)=>{
+                        {currentPost.map((singalPost, i)=>{
                             const {id, userId, body, title} = singalPost
                             return(
                                 <div className="card shadow mb-4" key={id} style={{cursor:'pointer'}}
@@ -121,8 +132,17 @@ class SearchHome extends Component{
                             )
                         })}
                         <div className="d-flex justify-content-between mt-5">
-                            <button className="btn btn-primary">Previous</button>
-                           <button className="btn btn-primary">Next</button>
+                            <nav>
+                                <ul className="pagination m-auto">
+                                    {pageNumber.map((page, i)=>{
+                                        return(
+                                            <li className="page-item" key={i}><a className="page-link" onClick={()=> this.pageChange(page)} style={{cursor: 'pointer'}}>{page}</a></li>
+                                        )
+                                    })}
+
+
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                 </div>
