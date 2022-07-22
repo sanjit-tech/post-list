@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3febb8b3-dae4-4b84-b5ef-0f68c46fe495" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SearchHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchHome.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
@@ -28,8 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/SearchHome.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="103" column="16" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="16" />
+            <state relative-caret-position="208">
+              <caret line="118" column="73" selection-start-line="118" selection-start-column="73" selection-end-line="118" selection-end-column="73" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -40,8 +41,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/SearchResult.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="55" column="73" lean-forward="true" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="73" />
+            <state relative-caret-position="200">
+              <caret line="58" column="102" lean-forward="true" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="102" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -106,8 +107,8 @@
       <find>card</find>
       <find>show_per_page</find>
       <find>is_active</find>
-      <find>charAt</find>
       <find>handleChange</find>
+      <find>charAt</find>
     </findStrings>
     <replaceStrings>
       <replace>className=&quot;</replace>
@@ -192,12 +193,12 @@
       <workItem from="1657530343782" duration="162000" />
       <workItem from="1657949084448" duration="5641000" />
       <workItem from="1657986475488" duration="14317000" />
-      <workItem from="1658408130142" duration="10066000" />
+      <workItem from="1658408130142" duration="10668000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48546000" />
+    <option name="totallyTimeSpent" value="49148000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -310,8 +311,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SearchResult.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="55" column="73" lean-forward="true" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="73" />
+        <state relative-caret-position="200">
+          <caret line="58" column="102" lean-forward="true" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="102" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>
@@ -320,8 +321,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SearchHome.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="103" column="16" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="16" />
+        <state relative-caret-position="208">
+          <caret line="118" column="73" selection-start-line="118" selection-start-column="73" selection-end-line="118" selection-end-column="73" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>

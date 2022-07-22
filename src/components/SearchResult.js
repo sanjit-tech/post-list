@@ -56,6 +56,7 @@ class SearchResult extends Component{
                         <h1 className="text-center mb-4">Post Result</h1>
                         <div className="card shadow mb-4">
                             <div className="card-body">
+                                <span className="badge bg-success">#{id}</span>
                                 <h5 className="card-title text-capitalize text-info">#{id}{title}</h5>
                                 <p className="card-text">{body}</p>
                             </div>

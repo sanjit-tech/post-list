@@ -116,7 +116,8 @@ class SearchHome extends Component{
                                      }}
                                 >
                                     <div className="card-body">
-                                        <h5 className="card-title text-capitalize text-info">#{id}{title}</h5>
+                                        <span className="badge bg-success">#{id}</span>
+                                        <h5 className="card-title text-capitalize text-info">{title}</h5>
                                         <p className="card-text">{body}</p>
                                         <a href="#" className="card-link">See Post</a>
                                     </div>
@@ -124,12 +125,14 @@ class SearchHome extends Component{
 
                             )
                         })}
-                        <div className="d-flex justify-content-center mt-5">
+                        <p className="card-title text-muted text-center  mt-5">You are on page  {current_page}</p>
+                        <div className="d-flex justify-content-center">
+
                             <nav>
                                 <ul className="pagination m-auto">
                                     {pageNumber.map((page, i)=>{
                                         return(
-                                            <li className="page-item" key={i}><a className="page-link" onClick={()=> this.pageChange(page)} style={{cursor: 'pointer'}}>{page}</a></li>
+                                            <li className={`page-item ${current_page === page ? 'active' : ''}`} key={i}><a className="page-link" onClick={()=> this.pageChange(page)} style={{cursor: 'pointer'}}>{page}</a></li>
                                         )
                                     })}
 
