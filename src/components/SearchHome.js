@@ -13,7 +13,7 @@ class SearchHome extends Component{
             dataList: [],
             postList: [],
             current_page: 1,
-            post_per_page: 10,
+            post_per_page: 12,
         }
 
     }
@@ -102,12 +102,14 @@ class SearchHome extends Component{
                     {/*</div>*/}
                 {/*</div>*/}
                 <div className="row">
-                    <div className="col-xl-10 m-auto">
+                    <div className="col-xl-12">
                         <h1 className="text-center mb-4">Post List</h1>
-                        {currentPost.map((singalPost, i)=>{
+                        <div className="row row-cols-1 row-cols-md-4 g-4">
+                            {currentPost.map((singalPost, i)=>{
                             const {id, userId, body, title} = singalPost
                             return(
-                                <div className="card shadow mb-4" key={id} style={{cursor:'pointer'}}
+                                <div className="col">
+                                <div className="card shadow mb-4 h-100" key={id} style={{cursor:'pointer'}}
                                      onClick={() => {
                                          this.props.history.push({
                                              pathname: `${`/post-result`}/${id}`,
@@ -116,15 +118,20 @@ class SearchHome extends Component{
                                      }}
                                 >
                                     <div className="card-body">
+                                        <img src={`https://wizcounsel.s3.amazonaws.com/product_photo/182/Backend-development.jpg`} className="card-img-top" alt={title}/>
                                         <span className="badge bg-success">#{id}</span>
-                                        <h5 className="card-title text-capitalize text-info">{title}</h5>
-                                        <p className="card-text">{body}</p>
-                                        <a href="#" className="card-link">See Post</a>
+                                        <h5 className="card-title text-capitalize text-info post-title">{title}</h5>
+                                        <p className="card-text post-description">{body}</p>
                                     </div>
+                                    <div className="card-footer" style={{background:'white'}}>
+                                        <a className="card-link">Read Post</a>
+                                    </div>
+                                </div>
                                 </div>
 
                             )
                         })}
+                        </div>
                         <p className="card-title text-muted text-center  mt-5">You are on page  {current_page}</p>
                         <div className="d-flex justify-content-center">
 

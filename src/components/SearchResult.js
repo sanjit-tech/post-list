@@ -56,8 +56,9 @@ class SearchResult extends Component{
                         <h1 className="text-center mb-4">Post Result</h1>
                         <div className="card shadow mb-4">
                             <div className="card-body">
+                                <img src={`https://wizcounsel.s3.amazonaws.com/product_photo/182/Backend-development.jpg`} className="card-img-top mb-3" alt={title}/>
                                 <span className="badge bg-success">#{id}</span>
-                                <h5 className="card-title text-capitalize text-info">#{id}{title}</h5>
+                                <h5 className="card-title text-capitalize text-info">{title}</h5>
                                 <p className="card-text">{body}</p>
                             </div>
                         </div>
